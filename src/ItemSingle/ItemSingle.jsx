@@ -22,10 +22,12 @@ export default class ItemSingle extends React.Component {
   }
 
   tick() {
+    const var1 = new Date().setHours(
+      this.props.hoursGMT0 + this.props.hoursDiff
+    );
+
     this.setState({
-      time: new Date()
-        .setHours(this.props.hoursGMT0 + this.props.hoursDiff)
-        .toLocaleString('ru-RU'),
+      time: new Date(var1).toLocaleTimeString('ru-RU'),
     });
   }
 
