@@ -11,7 +11,7 @@ export default function Main() {
   const [records, setRecords] = useState([]);
   const [form, setForm] = useState({ inputName: '', inputTimezone: '' });
 
-  const currentdate = new Date();
+  const currenttime = moment().format('HH:mm:ss');
 
   const handleChange = (name, value) => {
     setForm((prevForm) => ({ ...prevForm, [name]: value }));
@@ -45,7 +45,7 @@ export default function Main() {
       <ItemList
         isChanged={false}
         records={records}
-        time={new Date()}
+        time={currenttime}
         onRemove={handleRemove}
       />
     </>

@@ -9,13 +9,12 @@ export default function ItemList(props) {
     props.onRemove(id);
   };
 
-  console.log(records);
-
   return (
     <div className="ItemRow">
       {records.map((obj) => (
         <ItemSingle
           title={obj.title}
+          time={props.time}
           timezone={obj.timezone}
           record={obj}
           onRemove={() => handleRemove(obj.id)}

@@ -7,7 +7,7 @@ export default class ItemSingle extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: new Date(),
+      time: this.props.time,
     };
   }
 
@@ -23,9 +23,7 @@ export default class ItemSingle extends React.Component {
 
   tick() {
     this.setState({
-      date: new Date().setTime(
-        new Date().getTime() + this.props.timezone * 60 * 60 * 1000
-      ),
+      time: moment(this.props.time).add(this.props.timezone, 'hours'),
     });
   }
 
@@ -38,7 +36,7 @@ export default class ItemSingle extends React.Component {
             X
           </span>
         </div>
-        <div className="itemWatch">{this.props.timezone}</div>
+        <div className="itemWatch">{this.state.time}</div>
       </div>
     );
   }
