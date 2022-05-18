@@ -24,9 +24,12 @@ export default function App() {
     // const date = momentDate.format('YYYY-MM-DD');
     // console.log(date, form.inputTimezone);
 
+    const datetime = new Date().setHours(
+      new Date().getHours() + Number(form.inputTimezone)
+    );
     setRecords((prevRecords) => [
       ...prevRecords,
-      new ItemClass(form.inputName, Number(form.inputTimezone), new Date()),
+      new ItemClass(form.inputName, Number(form.inputTimezone), datetime),
     ]);
 
     setForm({ inputName: '', inputTimezone: '' });

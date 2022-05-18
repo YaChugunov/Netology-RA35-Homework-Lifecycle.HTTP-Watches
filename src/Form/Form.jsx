@@ -23,13 +23,13 @@ export default function Form(props) {
             <input
               name="inputName"
               type="text"
-              placeholder="Временная зона"
+              placeholder="Название"
               value={form.inputName}
               onChange={handleChange}
             />
           </div>
           <div className="formTimezone">
-            <label htmlFor="inputTimezone">Временная зона</label>
+            <label htmlFor="inputTimezone">Смещение в часах</label>
             <input
               name="inputTimezone"
               type="number"

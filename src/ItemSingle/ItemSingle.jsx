@@ -23,7 +23,9 @@ export default class ItemSingle extends React.Component {
 
   tick() {
     this.setState({
-      date: new Date(),
+      date: new Date().setTime(
+        new Date().getTime() + this.props.timezone * 60 * 60 * 1000
+      ),
     });
   }
 
@@ -36,14 +38,7 @@ export default class ItemSingle extends React.Component {
             X
           </span>
         </div>
-        <div className="itemWatch">
-          {/* {moment().utcOffset(this.timezone, true).format('HH:mm:ss')} */}
-          {this.state.date.getHours() +
-            ':' +
-            this.state.date.getMinutes() +
-            ':' +
-            this.state.date.getSeconds()}
-        </div>
+        <div className="itemWatch">{this.state.date}</div>
       </div>
     );
   }
