@@ -37,8 +37,15 @@ export default class ItemSingle extends React.Component {
           </span>
         </div>
         <div className="itemWatch">
-          {/* {moment().utcOffset(this.timezone, true).format('HH:mm:ss')} */}
-          {this.state.date.toLocaleTimeString()}
+          {date.getFullYear() +
+            '/' +
+            (date.getMonth() + 1) +
+            '/' +
+            date.getDate() +
+            ' ' +
+            date.getHours() +
+            ':' +
+            date.getMinutes()}
         </div>
       </div>
     );
