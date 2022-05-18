@@ -38,7 +38,7 @@ export default class ItemSingle extends React.Component {
             X
           </span>
         </div>
-        <div className="itemWatch">{this.state.date}</div>
+        <div className="itemWatch">{this.props.timezone}</div>
       </div>
     );
   }

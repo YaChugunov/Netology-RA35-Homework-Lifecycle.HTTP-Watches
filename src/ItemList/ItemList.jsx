@@ -16,7 +16,7 @@ export default function ItemList(props) {
       {records.map((obj) => (
         <ItemSingle
           title={obj.title}
-          time={obj.time}
+          timezone={obj.timezone}
           record={obj}
           onRemove={() => handleRemove(obj.id)}
           id={obj.id}

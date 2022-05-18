@@ -7,9 +7,11 @@ import Form from '../Form/Form';
 import ItemList from '../ItemList/ItemList';
 import ItemClass from '../ItemClass/ItemClass';
 
-export default function App() {
+export default function Main() {
   const [records, setRecords] = useState([]);
   const [form, setForm] = useState({ inputName: '', inputTimezone: '' });
+
+  const currentdate = new Date();
 
   const handleChange = (name, value) => {
     setForm((prevForm) => ({ ...prevForm, [name]: value }));
@@ -24,12 +26,9 @@ export default function App() {
     // const date = momentDate.format('YYYY-MM-DD');
     // console.log(date, form.inputTimezone);
 
-    const datetime = new Date().setHours(
-      new Date().getHours() + Number(form.inputTimezone)
-    );
     setRecords((prevRecords) => [
       ...prevRecords,
-      new ItemClass(form.inputName, Number(form.inputTimezone), datetime),
+      new ItemClass(form.inputName, Number(form.inputTimezone)),
     ]);
 
     setForm({ inputName: '', inputTimezone: '' });
@@ -41,6 +40,7 @@ export default function App() {
 
   return (
     <>
+      <div className="baseTimeGMT"></div>
       <Form form={form} onChange={handleChange} onSubmit={handleSubmit} />
       <ItemList
         isChanged={false}
