@@ -3,9 +3,10 @@ import { nanoid } from 'nanoid';
 
 // Класс элемента таблицы записей
 export default class ItemClass {
-  constructor(title, timezone) {
+  constructor(title, hoursGMT0, hoursDiff) {
     this.id = nanoid();
     this.title = title;
-    this.timezone = timezone;
+    this.hoursGMT0 = hoursGMT0;
+    this.hoursDiff = hoursDiff;
   }
 }

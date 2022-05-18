@@ -22,7 +22,7 @@ input {
 input[type='text'][name='inputName'] {
   height: 32px;
 }
-input[type='number'][name='inputTimezone'] {
+input[type='number'][name='inputHoursDiff'] {
   width: 120px;
   text-align: center;
 }

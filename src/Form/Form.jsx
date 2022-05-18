@@ -9,7 +9,7 @@ export default function Form(props) {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    (form.inputTimezone && form.inputTimezone) !== ''
+    (form.inputHoursDiff && form.inputHoursDiff) !== ''
       ? onSubmit()
       : alert('Заполните оба поля!');
   };
@@ -29,11 +29,11 @@ export default function Form(props) {
             />
           </div>
           <div className="formTimezone">
-            <label htmlFor="inputTimezone">Смещение в часах</label>
+            <label htmlFor="inputHoursDiff">Смещение в часах</label>
             <input
-              name="inputTimezone"
+              name="inputHoursDiff"
               type="number"
-              value={form.inputTimezone}
+              value={form.inputHoursDiff}
               onChange={handleChange}
               step="-1"
               placeholder="Смещение"
