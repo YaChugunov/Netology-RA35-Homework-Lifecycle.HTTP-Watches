@@ -10,7 +10,7 @@ export default function ItemList(props) {
   };
 
   return (
-    <div className="ItemRow">
+    <div className="items">
       {records.map((obj) => (
         <ItemSingle
           title={obj.title}

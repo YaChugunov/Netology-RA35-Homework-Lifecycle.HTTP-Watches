@@ -33,16 +33,18 @@ export default class ItemSingle extends React.Component {
 
   render() {
     return (
-      <div className="Item">
-        <div className="itemTitle">
-          {this.props.title}
-          <span className="remove" onClick={this.props.onRemove}>
+      <div className="item">
+        <div className="item-control">
+          <button className="remove" onClick={this.props.onRemove}>
             X
-          </span>
+          </button>
         </div>
-        <div className="itemWatch">hoursGMT0: {this.props.hoursGMT0}</div>
-        <div className="itemWatch">hoursDiff: {this.props.hoursDiff}</div>
-        <div className="itemWatch">TIME: {this.state.time}</div>
+        <div className="item-header">
+          <div className="title">{this.props.title}</div>
+        </div>
+        <div className="item-body">
+          <div className="clock">{this.state.time}</div>
+        </div>
       </div>
     );
   }
